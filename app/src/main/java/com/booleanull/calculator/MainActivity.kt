@@ -195,74 +195,78 @@ class MainActivity : AppCompatActivity() {
         }
 
         text_percent.setOnClickListener {
-            if (!signsAll.contains(text_task.text.last().toString())) {
-                showResult(getCheckedNullFractional(makeResult(makeResult(text_task.text.toString()).toString() + "÷100")))
-            } else {
-                showResult(
-                    getCheckedNullFractional(
-                        makeResult(
+            if(!TextUtils.isEmpty(text_task.text.toString())) {
+                if (!signsAll.contains(text_task.text.last().toString())) {
+                    showResult(getCheckedNullFractional(makeResult(makeResult(text_task.text.toString()).toString() + "÷100")))
+                } else {
+                    showResult(
+                        getCheckedNullFractional(
                             makeResult(
-                                text_task.text.toString().substring(
-                                    0,
-                                    text_task.text.length - 1
-                                )
-                            ).toString() + "÷100"
+                                makeResult(
+                                    text_task.text.toString().substring(
+                                        0,
+                                        text_task.text.length - 1
+                                    )
+                                ).toString() + "÷100"
+                            )
                         )
                     )
-                )
+                }
+                text_task.text = text_result.text
             }
-            text_task.text = text_result.text
         }
 
         text_swap.setOnClickListener {
-            if (!signsAll.contains(text_task.text.last().toString())) {
-                if (text_task.text.toString().first() == '-') {
-                    showResult(
-                        getCheckedNullFractional(
-                            makeResult(
+            if (!TextUtils.isEmpty(text_task.text.toString())) {
+                if (!signsAll.contains(text_task.text.last().toString())) {
+                    if (text_task.text.toString().first() == '-') {
+                        showResult(
+                            getCheckedNullFractional(
                                 makeResult(
-                                    text_task.text.toString().substring(
-                                        1,
-                                        text_task.text.length
-                                    )
-                                ).toString()
+                                    makeResult(
+                                        text_task.text.toString().substring(
+                                            1,
+                                            text_task.text.length
+                                        )
+                                    ).toString()
+                                )
                             )
                         )
-                    )
+                    } else {
+                        showResult(getCheckedNullFractional(makeResult(makeResult("-" + text_task.text.toString()).toString())))
+                    }
                 } else {
-                    showResult(getCheckedNullFractional(makeResult(makeResult("-" + text_task.text.toString()).toString())))
-                }
-            } else {
-                if (text_task.text.toString().first() == '-') {
-                    showResult(
-                        getCheckedNullFractional(
-                            makeResult(
+                    if (text_task.text.toString().first() == '-') {
+                        showResult(
+                            getCheckedNullFractional(
                                 makeResult(
-                                    text_task.text.toString().substring(
-                                        1,
-                                        text_task.text.length - 1
-                                    )
-                                ).toString()
+                                    makeResult(
+                                        text_task.text.toString().substring(
+                                            1,
+                                            text_task.text.length - 1
+                                        )
+                                    ).toString()
+                                )
                             )
                         )
-                    )
-                } else {
-                    showResult(
-                        getCheckedNullFractional(
-                            makeResult(
+                    } else {
+                        showResult(
+                            getCheckedNullFractional(
                                 makeResult(
-                                    "-" +
-                                            text_task.text.toString().substring(
-                                                0,
-                                                text_task.text.length - 1
-                                            )
-                                ).toString()
+                                    makeResult(
+                                        "-" +
+                                                text_task.text.toString().substring(
+                                                    0,
+                                                    text_task.text.length - 1
+                                                )
+                                    ).toString()
+                                )
                             )
                         )
-                    )
+                    }
                 }
+                text_task.text = text_result.text
             }
-            text_task.text = text_result.text
         }
     }
 
