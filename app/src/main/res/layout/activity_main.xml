@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_padding"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/result_layout_margin"
+        android:layout_marginBottom="@dimen/result_layout_margin"
+        android:animateLayoutChanges="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/text_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:lines="1"
+                android:textColor="@color/colorGray"
+                android:textSize="32sp" />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/result_margin"
+            android:gravity="end"
+            android:text="52"
+            android:textColor="@color/colorWhite"
+            android:textSize="52sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/view_margin"
+            android:background="@drawable/equally_gradient" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_one"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_two"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_ac"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/ac"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_font_size"
+                app:layout_constraintEnd_toStartOf="@id/text_swap"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/text_swap"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/swap_sign"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_font_size"
+                app:layout_constraintEnd_toStartOf="@id/text_percent"
+                app:layout_constraintStart_toEndOf="@id/text_ac" />
+
+            <TextView
+                android:id="@+id/text_percent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/percent"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/small_font_size"
+                app:layout_constraintEnd_toStartOf="@id/text_division"
+                app:layout_constraintStart_toEndOf="@id/text_swap" />
+
+            <TextView
+                android:id="@+id/text_division"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/division"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/long_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_percent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_two"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_three"
+            app:layout_constraintTop_toBottomOf="@id/layout_one">
+
+            <TextView
+                android:id="@+id/text_seven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/seven"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_eight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/eight"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_nine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/nine"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size"
+                app:layout_constraintEnd_toStartOf="@id/text_multiply"
+                app:layout_constraintStart_toEndOf="@id/text_eight" />
+
+            <TextView
+                android:id="@+id/text_multiply"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/multiply"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/long_font_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_three"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_four"
+            app:layout_constraintTop_toBottomOf="@id/layout_two">
+
+            <TextView
+                android:id="@+id/text_four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/four"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_five"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/five"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_six"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/six"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_minus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/minus"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/long_font_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_four"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_five"
+            app:layout_constraintTop_toBottomOf="@id/layout_three">
+
+            <TextView
+                android:id="@+id/text_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/one"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/two"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/three"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_plus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/plus"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/long_font_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_five"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_four">
+
+            <TextView
+                android:id="@+id/text_zero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/zero"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_point"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/point"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/text_equally"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/equally_margin"
+                android:layout_marginBottom="@dimen/equally_margin"
+                android:layout_weight="2"
+                android:background="@drawable/equally_gradient"
+                android:gravity="center"
+                android:text="@string/equally"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/small_font_size" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
