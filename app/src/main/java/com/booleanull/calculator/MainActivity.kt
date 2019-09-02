@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
             if (!signsAll.contains(text_task.text.last().toString())) {
                 for (i in text_task.text.reversed()) {
                     if (signsAll.contains(i.toString())) {
-                        isCorrect = i != ','
+                        isCorrect = i != '.'
                         break
                     }
                 }
