@@ -1,6 +1,6 @@
 # Calculator
 
-https://play.google.com/store/apps/details?id=com.bnull.yourreview
+https://play.google.com/store/apps/details?id=com.booleanull.calculator
 
 ## Privaty Policy
 ```
